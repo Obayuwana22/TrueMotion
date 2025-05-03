@@ -1,5 +1,5 @@
 import search from "../assets/svg/search-normal.svg";
-// import filter from "../assets/svg/filter.svg";
+import filter from "../assets/svg/filter.svg";
 
 const Search = () => {
   return (
@@ -14,7 +14,7 @@ const Search = () => {
           />
         </div>
         <img
-          src=""
+          src={filter}
           alt="filter"
           className="border border-secondary-200 rounded-xl py-2 px-3"
         />
