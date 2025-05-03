@@ -1,6 +1,5 @@
 import ad1Background from "../assets/png/Ads 1.png";
 import firstCar from "../assets/png/image 7.png";
-import Button from "./Button";
 
 const Ads = () => {
   return (
@@ -15,7 +14,9 @@ const Ads = () => {
             Ease of doing a car rental safely and <br /> reliably. Of course at
             a low price.
           </p>
-          <Button text="Rental Car" />
+          <button className="bg-primary-500 py-2 px-8 rounded text-primary-white">
+            <span className="font-semibold text-xs">Rental Car</span>
+          </button>
           <div className="w-[196px] mt-5 ml-10">
             <img src={firstCar} alt="car" />
           </div>

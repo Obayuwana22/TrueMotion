@@ -23,9 +23,9 @@ const PopularCarCard = () => {
   ];
   return (
     <div>
-      <div className="my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 w-[240px]">
+      <div className="my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5">
         <div className="flex justify-between">
-          <div className="font-semibold text-secondary-500">Koenigsegg</div>
+          <div className="font-semibold text-secondary-500">All New Rush</div>
           <div onClick={() => setIsLiked(!isLiked)}>
             {isLiked ? (
               <img src={redLike} alt="liked icon" />
@@ -34,25 +34,28 @@ const PopularCarCard = () => {
             )}
           </div>
         </div>
-        <span className="font-medium text-xs text-secondary-300">Sport</span>
-        <div className="mt-5 mb-10">
-          <img src={car} alt="image of a car" />
+        <span className="font-medium text-xs text-secondary-300">SUV</span>
+        <div className="flex justify-between items-end mt-2">
+          <div className="w-[150px]">
+            <img src={car} alt="image of a car" />
+          </div>
+          <div className="flex flex-col gap-3 font-medium text-secondary-300 text-xs">
+            {carData.map((item) => (
+              <div key={item.id} className="flex gap-1">
+                <img
+                  src={item.icon}
+                  alt={item.alt ? item.alt : item.description}
+                />
+                <span>{item.description}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-between font-medium text-secondary-300 text-xs">
-          {carData.map((item) => (
-            <div key={item.id} className="flex gap-1">
-              <img
-                src={item.icon}
-                alt={item.alt ? item.alt : item.description}
-              />
-              <span>{item.description}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center justify-between mt-7">
-          <div className="font-bold">
-            <span>$99.00/</span>
+        <div className="flex items-center justify-between mt-10">
+          <div >
+            <span className="font-bold">$99.00/</span>
             <span className="text-xs text-secondary-300 ml-1">day</span>
+            <div className="text-xs font-medium text-secondary-300">$80.00</div>
           </div>
           <Button text="Rent Now"/>
         </div>

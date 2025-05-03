@@ -3,7 +3,7 @@ import { footer } from "../data";
 const Footer = () => {
   return (
     <div>
-      <div>
+      <div className="mt-16">
         <h1 className="uppercase font-bold text-2xl text-primary-500 mb-5">
           truemotion
         </h1>

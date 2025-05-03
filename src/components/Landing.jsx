@@ -1,6 +1,7 @@
 import Ads from "./Ads";
 import Footer from "./Footer";
 import PopularCar from "./PopularCar";
+import RecommendedCar from "./RecommendedCar";
 import RentalCycle from "./RentalCycle";
 import SwapBtn from "./SwapBtn";
 
@@ -15,6 +16,7 @@ const Landing = () => {
         </div>
       </div>
       <PopularCar />
+      <RecommendedCar />
       <Footer />
     </div>
   );
