@@ -13,7 +13,11 @@ const Search = () => {
             className="border border-secondary-200 rounded-xl w-full px-14 py-3 text-sm font-medium"
           />
         </div>
-        <img src={filter} alt="filter" className="border border-secondary-200 rounded-xl py-2 px-3"/>
+        <img
+          src={filter}
+          alt="filter"
+          className="border border-secondary-200 rounded-xl py-2 px-3"
+        />
       </div>
       {/* <div className="relative">
         <img src={search} alt="" className="absolute ml-5 top-2"/>
