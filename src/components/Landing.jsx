@@ -15,8 +15,12 @@ const Landing = () => {
           <SwapBtn />
         </div>
       </div>
-      <PopularCar />
-      <RecommendedCar />
+      <div>
+        <PopularCar />
+      </div>
+      <div className="mt-3">
+        <RecommendedCar />
+      </div>
       <Footer />
     </div>
   );
