@@ -1,5 +1,5 @@
 import search from "../assets/svg/search-normal.svg";
-import filter from "../assets/svg/filter.svg";
+import filter from "../assets/svg/search-filter.svg";
 
 const Search = () => {
   return (
