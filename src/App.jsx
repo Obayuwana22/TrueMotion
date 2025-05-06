@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 ]);
 const App = () => {
   return (
-    <div className="px-5 font-plus-jakarta pb-5">
+    <div className="px-5 font-plus-jakarta pb-5 xl:px-0">
       <RouterProvider router={router} />
     </div>
   );

@@ -1,5 +1,6 @@
 import pickUp from "../assets/svg/Mark.svg";
 import dropOff from "../assets/svg/Mark (1).svg";
+import SwapBtn from "./SwapBtn";
 // import arrowDown from "../assets/svg/arrow-down.svg";
 import LocationCard from "./LocationCard";
 // import Locations from "./pick up details/Locations";
@@ -46,11 +47,17 @@ const RentalCycle = () => {
   ];
 
   return (
-    <div>
+    <div className="relative">
       <LocationCard icon={pickUp} heading="Pick - Up" fields={pickUpDetails} />
-      <LocationCard icon={dropOff} heading="Drop - Off" fields={dropOffDetails} />
+      <div className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-1/2">
+        <SwapBtn />
+      </div>
+      <LocationCard
+        icon={dropOff}
+        heading="Drop - Off"
+        fields={dropOffDetails}
+      />
     </div>
   );
 };
 export default RentalCycle;
-

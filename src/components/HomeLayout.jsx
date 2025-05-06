@@ -5,7 +5,9 @@ const HomeLayout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="xl:px-12">
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -1,19 +1,15 @@
-import Ads from "./Ads";
 import Footer from "./Footer";
+import Hero from "./Hero";
 import PopularCar from "./PopularCar";
 import RecommendedCar from "./RecommendedCar";
 import RentalCycle from "./RentalCycle";
-import SwapBtn from "./SwapBtn";
 
 const Landing = () => {
   return (
     <div>
-      <Ads />
-      <div className="relative">
+      <Hero />
+      <div>
         <RentalCycle />
-        <div className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-1/2">
-          <SwapBtn />
-        </div>
       </div>
       <div>
         <PopularCar />

@@ -4,10 +4,13 @@ import Button from "./Button";
 const RecommendedCar = () => {
   return (
     <div>
-      <div className="text-sm text-secondary-300 font-semibold">
+      <div className="text-sm text-secondary-300 font-semibold mb-5">
         Recommendation Car
       </div>
-      <div className="">
+      <div className="md:flex md:flex-wrap md:gap-5 xl:gap-10 ">
+        <RecommendedCarCard />
+        <RecommendedCarCard />
+        <RecommendedCarCard />
         <RecommendedCarCard />
         <RecommendedCarCard />
         <RecommendedCarCard />

@@ -23,38 +23,46 @@ const PopularCarCard = () => {
   ];
   return (
     <div>
-      <div className="my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 w-[240px]">
-        <div className="flex justify-between">
-          <div className="font-semibold text-secondary-500">Koenigsegg</div>
-          <div onClick={() => setIsLiked(!isLiked)}>
-            {isLiked ? (
-              <img src={redLike} alt="liked icon" />
-            ) : (
-              <img src={unlike} alt="unliked icon" />
-            )}
-          </div>
-        </div>
-        <span className="font-medium text-xs text-secondary-300">Sport</span>
-        <div className="mt-5 mb-10">
-          <img src={car} alt="image of a car" />
-        </div>
-        <div className="flex justify-between font-medium text-secondary-300 text-xs">
-          {carData.map((item) => (
-            <div key={item.id} className="flex gap-1">
-              <img
-                src={item.icon}
-                alt={item.alt ? item.alt : item.description}
-              />
-              <span>{item.description}</span>
+      <div className="flex flex-col justify-between my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 w-[240px] xl:w-[304px] xl:h-[388px]">
+        <div>
+          <div className="flex justify-between">
+            <div className="font-semibold text-secondary-500">Koenigsegg</div>
+            <div onClick={() => setIsLiked(!isLiked)}>
+              {isLiked ? (
+                <img src={redLike} alt="liked icon" />
+              ) : (
+                <img src={unlike} alt="unliked icon" />
+              )}
             </div>
-          ))}
-        </div>
-        <div className="flex items-center justify-between mt-7">
-          <div className="font-bold">
-            <span>$99.00/</span>
-            <span className="text-xs text-secondary-300 ml-1">day</span>
           </div>
-          <Button text="Rent Now"/>
+          <span className="font-medium text-xs text-secondary-300">Sport</span>
+        </div>
+        <div className="mt-5 mb-10 relative">
+          <img src={car} alt="image of a car" />
+          <div className="absolute right-0 top-0 h-full w-16 z-10 bg-gradient-to-l from-white/80 to-transparent pointer-events-none" />
+        </div>
+        <div>
+          <div className="flex justify-between font-medium text-secondary-300 text-xs">
+            {carData.map((item) => (
+              <div key={item.id} className="flex gap-1">
+                <img
+                  src={item.icon}
+                  alt={item.alt ? item.alt : item.description}
+                />
+                <span>{item.description}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between mt-7">
+            <div>
+              <div className="font-bold">
+                <span>$99.00/</span>
+                <span className="text-xs text-secondary-300 ml-1">day</span>
+              </div>
+              {/* <div className="font-medium text-xs text-secondary-300 mt-1">$80.00</div> */}
+            </div>
+            <Button text="Rent Now" />
+          </div>
         </div>
       </div>
     </div>

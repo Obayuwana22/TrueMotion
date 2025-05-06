@@ -19,15 +19,6 @@ const Search = () => {
           className="border border-secondary-200 rounded-xl py-2 px-3"
         />
       </div>
-      {/* <div className="relative">
-        <img src={search} alt="" className="absolute ml-5 top-2"/>
-        <input
-          type="text"
-          placeholder="Search something here"
-          className="w-[492px] border border-secondary-200 rounded-3xl pl-14 py-2 "
-        />
-        <img src={filter} alt="" className="absolute top-2 right-0 mr-5" />
-      </div> */}
     </div>
   );
 };

@@ -1,6 +1,10 @@
+import Ads from "./Ads";
+
 const Hero = () => {
   return (
-    <div>Hero</div>
-  )
-}
-export default Hero
+    <div>
+      <Ads />
+    </div>
+  );
+};
+export default Hero;
