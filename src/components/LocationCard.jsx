@@ -1,6 +1,6 @@
 const LocationCard = ({ icon, heading, fields = [] }) => {
   return (
-    <div className="my-10">
+    <div className="my-10 w-full">
       <div className="shadow-[0_0_10px_rgba(0,0,0,0.1)] p-5 rounded">
         <div className="flex gap-2 mb-5">
           {icon && <img src={icon} alt={`${heading} icon`} />}
@@ -26,7 +26,7 @@ const LocationCard = ({ icon, heading, fields = [] }) => {
                 </div>
               </div>
               {/* Don't render divider after last item */}
-              {index < fields.length - 1 && <div className="w-[1px] bg-secondary-200 h-full"></div>}
+              {/* {index < fields.length - 1 && <div className="w-[1px] bg-secondary-200 h-full"></div>} */}
             </div>
           ))}
         </div>

@@ -48,15 +48,23 @@ const RentalCycle = () => {
 
   return (
     <div className="relative">
-      <LocationCard icon={pickUp} heading="Pick - Up" fields={pickUpDetails} />
-      <div className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-1/2">
-        <SwapBtn />
+      <div className="lg:flex lg:gap-36">
+        <LocationCard
+          icon={pickUp}
+          heading="Pick - Up"
+          fields={pickUpDetails}
+        />
+
+        <div className="absolute top-1/2 left-1/2 transform  -translate-x-1/2 -translate-y-1/2">
+          <SwapBtn />
+        </div>
+
+        <LocationCard
+          icon={dropOff}
+          heading="Drop - Off"
+          fields={dropOffDetails}
+        />
       </div>
-      <LocationCard
-        icon={dropOff}
-        heading="Drop - Off"
-        fields={dropOffDetails}
-      />
     </div>
   );
 };
