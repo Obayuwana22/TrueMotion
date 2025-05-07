@@ -31,7 +31,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="w-full h-[1px] bg-secondary-200 mb-9"></div>
+      <div className="xl:w-full xl:h-[1px] xl:bg-secondary-200 xl:mb-9"></div>
       <div className="font-semibold text-xs xl:flex xl:justify-between xl:text-base">
         <div className="flex justify-between mb-8 xl:order-2 xl:gap-20">
           <span>Privacy & Policy</span>
