@@ -1,7 +1,10 @@
 import search from "../assets/svg/search-normal.svg";
 import filter from "../assets/svg/search-filter.svg";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const Search = () => {
+  const { isFilterActive, setIsFilterActive } = useGlobalContext();
+
   return (
     <div className="mb-10">
       <div className="flex justify-between gap-4 ">
@@ -16,7 +19,8 @@ const Search = () => {
         <img
           src={filter}
           alt="filter"
-          className="border border-secondary-200 rounded-xl py-2 px-3"
+          className="border border-secondary-200 rounded-xl py-2 px-3 cursor-pointer"
+          onClick={() => setIsFilterActive(!isFilterActive)}
         />
       </div>
     </div>

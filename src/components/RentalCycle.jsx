@@ -47,7 +47,7 @@ const RentalCycle = () => {
   ];
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="lg:flex lg:gap-36">
         <LocationCard
           icon={pickUp}

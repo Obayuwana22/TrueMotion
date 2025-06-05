@@ -32,3 +32,30 @@ export const footer = [
     ],
   },
 ];
+
+
+export const carFeatures = [
+    {
+      id: nanoid(),
+      title: "Type",
+      list: [
+        { id: nanoid(), label: "Sport", quantity: 10 },
+        { id: nanoid(), label: "SUV", quantity: 12 },
+        { id: nanoid(), label: "MPV", quantity: 16 },
+        { id: nanoid(), label: "Sedan", quantity: 20 },
+        { id: nanoid(), label: "Coupe", quantity: 14 },
+        { id: nanoid(), label: "Hatchback", quantity: 14 },
+      ],
+    },
+    {
+      id: nanoid(),
+      title: "Capacity",
+      list: [
+        { id: nanoid(), label: "2 Person", quantity: 10 },
+        { id: nanoid(), label: "4 Person", quantity: 14 },
+        { id: nanoid(), label: "6 Person", quantity: 12 },
+        { id: nanoid(), label: "8 or More", quantity: 16 },
+      ],
+    },
+  ];
+  

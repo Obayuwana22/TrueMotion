@@ -8,7 +8,7 @@ const PopularCar = () => {
         <div className="text-xs text-primary-500">View All</div>
       </div>
       <div className="relative">
-        <div className="flex gap-5 overflow-auto scrollbar-hide xl:gap-10 xl:overflow-hidden">
+        <div className="flex gap-5 overflow-auto scrollbar-hide xl:gap-10 ">
           <PopularCarCard />
           <PopularCarCard />
           <PopularCarCard />
@@ -18,7 +18,7 @@ const PopularCar = () => {
           <PopularCarCard />
           <PopularCarCard />
         </div>
-        <div className="absolute right-0 top-0 h-full w-16 z-10 bg-gradient-to-l from-white/80 to-transparent pointer-events-none block xl:hidden" />
+        <div className="absolute right-0 top-0 h-full w-16 z-10 bg-gradient-to-l from-white/80 to-transparent pointer-events-none " />
       </div>
     </div>
   );

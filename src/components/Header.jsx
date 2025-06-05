@@ -5,11 +5,14 @@ import notification from "../assets/svg/Notification.svg";
 import settings from "../assets/svg/Settings.svg";
 import search from "../assets/svg/search-normal.svg";
 import filter from "../assets/svg/search-filter.svg";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const Header = () => {
+  const { isFilterActive, setIsFilterActive } = useGlobalContext();
+
   return (
-    <div>
-      <div className="xl:hidden">
+    <div className="bg-primary-white">
+      <div className="px-5 xl:hidden">
         <div className="flex items-center justify-between my-8">
           <h1 className="uppercase font-bold text-2xl text-primary-500">
             truemotion
@@ -22,7 +25,7 @@ const Header = () => {
       </div>
 
       <div className="hidden xl:block">
-        <div className="flex items-center justify-between py-8 shadow-sm mb-10 px-12">
+        <div className="flex items-center justify-between py-8 shadow-sm px-12">
           <div className="flex items-center gap-20">
             <h1 className="uppercase font-bold text-2xl text-primary-500">
               truemotion
@@ -37,7 +40,8 @@ const Header = () => {
               <img
                 src={filter}
                 alt=""
-                className="absolute top-2 left-[450px] mr-5"
+                className="absolute top-2 left-[450px] mr-5 cursor-pointer"
+                onClick={() => setIsFilterActive(!isFilterActive)}
               />
             </div>
           </div>

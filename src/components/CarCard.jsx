@@ -8,7 +8,7 @@ import redLike from "../assets/svg/red-like.svg";
 import { useState } from "react";
 import Button from "./Button";
 
-const RecommendedCarCard = () => {
+const CarCard = () => {
   const [isLiked, setIsLiked] = useState(false);
 
   const carData = [
@@ -22,8 +22,8 @@ const RecommendedCarCard = () => {
     },
   ];
   return (
-    <div>
-      <div className="flex flex-col justify-between my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 md:my-0">
+    <div className="">
+      <div className="flex flex-col justify-between my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 md:my-0 xl:min-w-[304px] xl:h-[388px] ">
         <div>
           <div className="flex justify-between">
             <div className="font-semibold text-secondary-500">All New Rush</div>
@@ -97,4 +97,4 @@ const RecommendedCarCard = () => {
     </div>
   );
 };
-export default RecommendedCarCard;
+export default CarCard;

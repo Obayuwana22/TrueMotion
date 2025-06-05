@@ -22,7 +22,7 @@ const PopularCarCard = () => {
     },
   ];
   return (
-    <div>
+    <div className="">
       <div className="flex flex-col justify-between my-5 shadow-[0_0_10px_rgba(0,0,0,0.1)] rounded p-5 w-[240px] xl:w-[304px] xl:h-[388px]">
         <div>
           <div className="flex justify-between">

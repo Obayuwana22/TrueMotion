@@ -2,7 +2,7 @@ import { footer } from "../data";
 
 const Footer = () => {
   return (
-    <div className="mt-16">
+    <div className="p-5 bg-primary-white xl:px-12 xl:pt-12">
       <div className="xl:flex xl:justify-between">
         <div className="mb-10">
           <h1 className="uppercase font-bold text-2xl text-primary-500 mb-5">
