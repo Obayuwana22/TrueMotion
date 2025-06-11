@@ -12,8 +12,8 @@ const Header = () => {
 
   return (
     <div className="bg-primary-white">
-      <div className="px-5 xl:hidden">
-        <div className="flex items-center justify-between my-8">
+      <div className="px-5 pb-8 mt-8  xl:hidden ">
+        <div className="flex items-center justify-between mb-5 ">
           <h1 className="uppercase font-bold text-2xl text-primary-500">
             truemotion
           </h1>

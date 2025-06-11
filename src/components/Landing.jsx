@@ -9,6 +9,8 @@ import { useGlobalContext } from "../context/GlobalContext";
 const Landing = () => {
   const { isFilterActive } = useGlobalContext();
 
+  if (isFilterActive) console.log(true);
+
   return (
     <div>
       <div className={`${isFilterActive ? "lg:flex" : ""}`}>
@@ -20,12 +22,12 @@ const Landing = () => {
           <Filter />
         </div>
         {isFilterActive ? (
-          <div className="lg:flex-1 px-5 xl:px-12 transition-all duration-700 opacity-100 translate-x-0 ">
+          <div className="px-5 transition-all duration-700 opacity-100 translate-x-0 xl:px-12">
             <RentalCycle />
             <FilterCars />
           </div>
         ) : (
-          <div className="xl:mt-10 px-5 xl:px-12 transition-all duration-700 opacity-100 translate-x-0">
+          <div className=" mt-5 px-5 transition-all duration-700 opacity-100 translate-x-0 lg:flex-1 xl:px-12 xl:mt-10">
             <Hero />
             <RentalCycle />
             <PopularCar />

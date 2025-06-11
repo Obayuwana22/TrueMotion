@@ -13,7 +13,7 @@ const Filter = () => {
   return (
     <>
       {isFilterActive && (
-        <div className="bg-primary-white w-full px-10 py-5 mb-5 lg:h-full xl:w-[360px] ">
+        <div className="bg-primary-white w-full px-10 py-5 mb-5 lg:h-full xl:w-[360px] shadow-2xl xl:shadow-none xl:mb-0">
           <div className="font-semibold text-black space-y-10">
             {carFeatures.map((feature) => (
               <div key={feature.id} className="space-y-5">

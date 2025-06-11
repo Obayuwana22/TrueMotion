@@ -1,8 +1,10 @@
-const Button = ({text}) => {
+const Button = ({ text, className = "" }) => {
   return (
-    <button className="bg-primary-500 py-1 px-5 rounded text-primary-white">
-            <span className="font-semibold text-xs">{text}</span>
-          </button>
+    <button
+      className={`bg-primary-500 py-2 px-5 rounded text-primary-white ${className}`}
+    >
+      {text}
+    </button>
   );
 };
 export default Button;

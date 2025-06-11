@@ -6,7 +6,7 @@ const Search = () => {
   const { isFilterActive, setIsFilterActive } = useGlobalContext();
 
   return (
-    <div className="mb-10">
+    <div>
       <div className="flex justify-between gap-4 ">
         <div className="relative w-full">
           <img src={search} alt="" className="absolute ml-5 top-3" />

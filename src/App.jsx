@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomeLayoutPage, LandingPage } from "./pages";
+import { CarDetailsPage, HomeLayoutPage, LandingPage } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -9,6 +9,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LandingPage />,
+      },
+      {
+        path: "/car/:id",
+        element: <CarDetailsPage/>,
       },
     ],
   },
