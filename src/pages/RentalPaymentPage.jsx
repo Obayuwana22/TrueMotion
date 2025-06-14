@@ -1,5 +1,5 @@
 import React from "react";
-import RentalPayment from "../components/RentalPayment";
+import RentalPayment from "../components/billing/RentalPayment";
 
 const RentalPaymentPage = () => {
   return (
