@@ -1,8 +1,7 @@
 import React from "react";
 import user from "../assets/png/user.png";
 import arrowDown from "../assets/svg/gray-arrow-down.svg";
-import star from "../assets/svg/star.svg";
-import emptyStar from "../assets/svg/empty-star.svg";
+import StarRating from "./StarRating";
 
 const Reviews = () => {
   return (
@@ -35,11 +34,7 @@ const Reviews = () => {
                 <div className="flex flex-col justify-between mt-1.5">
                   <div className="font-medium text-right">21 July 2022</div>
                   <div className="flex gap-1">
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={star} alt="" />
-                    <img src={emptyStar} alt="" />
+                    <StarRating numberOfStars={5} />
                   </div>
                 </div>
               </div>

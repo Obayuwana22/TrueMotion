@@ -2,17 +2,12 @@ import unlike from "../assets/svg/unlike.svg";
 import redLike from "../assets/svg/red-like.svg";
 import { useState } from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const CarCard = ({ car }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   if (!car) return null;
-
-  const handleLikeClick = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    setIsLiked((prev) => !prev);
-  };
 
   return (
     <div>
@@ -22,8 +17,12 @@ const CarCard = ({ car }) => {
             <div className="font-semibold text-secondary-500">
               {car.carBrand}
             </div>
-             <button onClick={handleLikeClick} aria-label={isLiked ? "Unlike" : "Like"} className="cursor-pointer">
-              <img src={isLiked ? redLike : unlike} alt="heart icon" className="pointer-events-none" />
+            <button
+              onClick={() => setIsLiked(!isLiked)}
+              aria-label={isLiked ? "Unlike" : "Like"}
+              className="cursor-pointer"
+            >
+              <img src={isLiked ? redLike : unlike} alt="heart icon" />
             </button>
           </div>
           <span className="font-medium text-xs text-secondary-300">
@@ -32,7 +31,7 @@ const CarCard = ({ car }) => {
         </div>
 
         <div className="flex justify-between mt-2 xl:flex-col">
-          <div className="relative w-[150px]  flex items-end xl:w-auto xl:my-14">
+          <div className="relative w-[150px] flex items-end mx-auto xl:w-[250px] xl:my-14">
             <img src={car.carImage} alt="image of a car" />
             {/* <div className="absolute bottom-0 left-0 h-5 w-full z-10 bg-gradient-to-t from-white/80 to-transparent pointer-events-none " /> */}
           </div>
@@ -59,7 +58,9 @@ const CarCard = ({ car }) => {
             <span className="text-xs text-secondary-300 ml-1">day</span>
             <div className="text-xs font-medium text-secondary-300">$80.00</div>
           </div>
-          <Button text="Rent Now" />
+          <Link to={`/car/${car.id}`}>
+            <Button text="Rent Now" />
+          </Link>
         </div>
       </div>
     </div>

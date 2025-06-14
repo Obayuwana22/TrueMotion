@@ -1,10 +1,13 @@
 import { nanoid } from "nanoid";
-import car from "./assets/png/image 7.png";
+import carOne from "./assets/png/image 7.png";
+import carTwo from "./assets/png/image 8.png";
 import gasPumpIcon from "./assets/svg/gas-station.svg";
 import gearTypeIcon from "./assets/svg/Car-gear-type.svg";
 import usersIcon from "./assets/svg/profile-2user.svg";
 import carPreviewOne from "./assets/png/car-preview-1.png";
 import carPreviewTwo from "./assets/png/car-preview-2.png";
+import ad1Background from "./assets/png/Ads 1.png";
+import ad2Background from "./assets/png/Ads 2.png";
 
 // Cars
 
@@ -13,7 +16,7 @@ export const cars = [
     id: "all-new-rush",
     carBrand: "All New Rush",
     carType: "SUV",
-    carImage: car,
+    carImage: carOne,
     carPreviewImages: {
       carPreviewOne,
       carPreviewTwo,
@@ -27,6 +30,31 @@ export const cars = [
       'NISMO has become the embodiment of Nissan\'s outstanding performance, inspired by the most unforgiving proving ground, the "race track". ',
     price: 99,
     slashedPrice: 100,
+    backDrop: ad1Background,
+    adsHeader: "The Best Platform for Car Rental",
+    adsDescription: "Ease of doing a car rental safely and reliably. Of course at a low price."
+  },
+  {
+    id: "all-new",
+    carBrand: "All New",
+    carType: "SUV",
+    carImage: carTwo,
+    carPreviewImages: {
+      carPreviewOne,
+      carPreviewTwo,
+    },
+    specs: {
+      fuel: { icon: gasPumpIcon, value: "90L" },
+      transmission: { icon: gearTypeIcon, value: "Manual" },
+      users: { icon: usersIcon, value: "2 People" },
+    },
+    description:
+      'NISMO has become the embodiment of Nissan\'s outstanding performance, inspired by the most unforgiving proving ground, the "race track". ',
+    price: 99,
+    slashedPrice: 100,
+    backDrop: ad2Background,
+    adsHeader: "Easy way to rent a car at a low price",
+    adsDescription: "Providing cheap car rental services and safe and comfortable facilities."
   },
 ];
 

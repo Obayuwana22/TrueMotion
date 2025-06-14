@@ -13,7 +13,7 @@ const Search = () => {
           <input
             type="text"
             placeholder="Search something here"
-            className="border border-secondary-200 rounded-xl w-full px-14 py-3 text-sm font-medium"
+            className="border border-secondary-200 rounded-xl w-full px-14 py-3 text-sm font-medium focus:outline-secondary-300"
           />
         </div>
         <img

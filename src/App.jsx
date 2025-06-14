@@ -1,10 +1,21 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { CarDetailsPage, HomeLayoutPage, LandingPage } from "./pages";
+import {
+  CarDetailsPage,
+  HomeLayoutPage,
+  LandingPage,
+  RentalPaymentPage,
+} from "./pages";
+import ScrollToTop from "./utils/ScrollToTop";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLayoutPage />,
+    element: (
+      <>
+        <ScrollToTop />
+        <HomeLayoutPage />
+      </>
+    ),
     children: [
       {
         index: true,
@@ -12,14 +23,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/car/:id",
-        element: <CarDetailsPage/>,
+        element: <CarDetailsPage />,
+      },
+      {
+        path: "/car/:carName/rent",
+        element: <RentalPaymentPage />,
       },
     ],
   },
 ]);
 const App = () => {
   return (
-    <div className="font-plus-jakarta bg-gray-body">
+    <div className="font-plus-jakarta bg-gray-background text-secondary-500 ">
       <RouterProvider router={router} />
     </div>
   );

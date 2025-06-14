@@ -2,11 +2,11 @@
 @import "tailwindcss";
 
 @theme {
-    --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
   /* --color-*: initial; */
 
-  --color-gray-body: #F6F7F9;
-  
+  --color-gray-background: #f6f7f9;
+
   /* Primary Neutral Palette */
   --color-primary-900: #0a196f;
   --color-primary-800: #102587;
@@ -75,12 +75,11 @@
   --color-secondary-100: #e0e9f4;
 }
 
-
-.scrollbar-hide::-webkit-scrollbar{
+.scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-.scrollbar-hide{
+.scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
