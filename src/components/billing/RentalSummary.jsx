@@ -3,6 +3,7 @@ import ad2Background from "../../assets/png/Ads 2.png";
 import { useLocation, useParams } from "react-router-dom";
 import BillingInput from "./BillingInput";
 import { cars } from "../../data";
+import StarRating from "../StarRating";
 
 const RentalSummary = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const RentalSummary = () => {
           of your rental car.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 items-center">
         <div
           className="flex justify-center items-center bg-cover bg-center rounded-xl h-full"
           style={{ backgroundImage: `url(${ad2Background})` }}
@@ -31,7 +32,15 @@ const RentalSummary = () => {
         </div>
 
         <div>
-          <h2 className="text-xl font-bold">{car.carBrand}</h2>
+          <div>
+            <h2 className="text-xl font-bold">{car.carBrand}</h2>
+          </div>
+          <div className="flex flex-col gap-1 mt-2 md:flex-row md:items-center ">
+            <StarRating numberOfStars={5} />
+            <span className="text-xs text-secondary-400 font-medium md:text-sm md:ml-1">
+              440+ Reviewer
+            </span>
+          </div>
         </div>
       </div>
       <div className="border border-secondary-200 my-5"></div>
