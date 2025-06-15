@@ -55,12 +55,12 @@ const CarDetails = () => {
                 </div>
               </div>
               <div className="flex justify-between gap-5 mt-7">
-                <div className="border-2 p-0.5 rounded-xl border-primary-500">
+                <div className="border-2 p-0.5 rounded-xl border-primary-500 w-full">
                   <div
                     className="flex justify-center items-center bg-cover bg-center rounded-xl h-full"
                     style={{ backgroundImage: `url(${ad2Background})` }}
                   >
-                    <img src={car.carImage} alt="car" className="" />
+                    <img src={car.carImage} alt="car" />
                   </div>
                 </div>
 
