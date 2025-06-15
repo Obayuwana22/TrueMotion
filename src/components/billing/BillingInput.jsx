@@ -32,7 +32,7 @@ const BillingInput = ({
       <input
         type={type}
         {...props}
-        className={`placeholder-secondary-300 text-xs font-medium p-5 bg-gray-background rounded-xl focus:outline-secondary-300 xl:text-sm ${className}`}
+        className={`placeholder-secondary-300 text-xs font-medium p-5 bg-gray-background rounded-xl focus:outline-secondary-300 w-full xl:text-sm ${className}`}
       />
     );
   }
@@ -44,7 +44,7 @@ const BillingInput = ({
       <input
         type={type}
         {...props}
-        className={`placeholder-secondary-300 text-xs font-medium p-5 bg-gray-background rounded-xl focus:outline-secondary-300 xl:text-sm ${className}`}
+        className={`placeholder-secondary-300 text-xs font-medium p-5 bg-gray-background rounded-xl focus:outline-secondary-300 w-full xl:text-sm ${className}`}
       />
     </div>
   );

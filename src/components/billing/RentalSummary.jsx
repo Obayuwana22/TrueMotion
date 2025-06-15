@@ -1,11 +1,15 @@
 import React from "react";
 import ad2Background from "../../assets/png/Ads 2.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import BillingInput from "./BillingInput";
+import { cars } from "../../data";
 
 const RentalSummary = () => {
+  const { id } = useParams();
   const location = useLocation();
-  const { car } = location.state || {};
+  const carFromLocation = location.state?.car;
+
+  const car = carFromLocation || cars.find((c) => c.id === id);
   console.log(car);
 
   if (!car) return <div>Car not found</div>;
@@ -40,7 +44,9 @@ const RentalSummary = () => {
           <span className="font-semibold">${car.price}.00</span>
         </div>
         <div className="flex items-center justify-between">
-          <span className="text-xs text-secondary-300 font-semibold lg:text-base">Tax</span>
+          <span className="text-xs text-secondary-300 font-semibold lg:text-base">
+            Tax
+          </span>
           <span className="font-semibold">$0</span>
         </div>
       </div>
