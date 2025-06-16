@@ -8,6 +8,12 @@ import carPreviewOne from "./assets/png/car-preview-1.png";
 import carPreviewTwo from "./assets/png/car-preview-2.png";
 import ad1Background from "./assets/png/Ads 1.png";
 import ad2Background from "./assets/png/Ads 2.png";
+import { RiHome6Line, RiSettingsLine } from "react-icons/ri";
+import { IoCarSportOutline, IoStatsChartOutline, IoWalletOutline } from "react-icons/io5";
+import { TbMessageDots } from "react-icons/tb";
+import { MdOutlineCalendarMonth } from "react-icons/md";
+import { FiHelpCircle } from "react-icons/fi";
+import { BiToggleRight } from "react-icons/bi";
 
 // Cars
 
@@ -32,7 +38,8 @@ export const cars = [
     slashedPrice: 100,
     backDrop: ad1Background,
     adsHeader: "The Best Platform for Car Rental",
-    adsDescription: "Ease of doing a car rental safely and reliably. Of course at a low price."
+    adsDescription:
+      "Ease of doing a car rental safely and reliably. Of course at a low price.",
   },
   {
     id: "all-new",
@@ -54,7 +61,8 @@ export const cars = [
     slashedPrice: 100,
     backDrop: ad2Background,
     adsHeader: "Easy way to rent a car at a low price",
-    adsDescription: "Providing cheap car rental services and safe and comfortable facilities."
+    adsDescription:
+      "Providing cheap car rental services and safe and comfortable facilities.",
   },
 ];
 
@@ -116,6 +124,30 @@ export const footer = [
       { id: nanoid(), text: "blog" },
       { id: nanoid(), text: "podcast" },
       { id: nanoid(), text: "invite a friend" },
+    ],
+  },
+];
+
+export const userNavbarLinks = [
+  {
+    id: nanoid(),
+    title: "main menu",
+    list: [
+      { id: nanoid(), icon: RiHome6Line, text: "dashboard" },
+      { id: nanoid(), icon: IoCarSportOutline, text: "car rent" },
+      { id: nanoid(), icon: IoStatsChartOutline, text: "insight" },
+      { id: nanoid(), icon:  IoWalletOutline, text: "reimburse" },
+      { id: nanoid(), icon: TbMessageDots, text: "inbox" },
+      { id: nanoid(), icon:  MdOutlineCalendarMonth, text: "calender" },
+    ],
+  },
+  {
+    id: nanoid(),
+    title: "preferences",
+    list: [
+      { id: nanoid(), icon: RiSettingsLine, text: "settings" },
+      { id: nanoid(), icon: FiHelpCircle, text: "help & center" },
+      { id: nanoid(), icon: BiToggleRight, text: "dark mode" },
     ],
   },
 ];

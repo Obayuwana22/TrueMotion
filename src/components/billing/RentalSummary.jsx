@@ -11,7 +11,6 @@ const RentalSummary = () => {
   const carFromLocation = location.state?.car;
 
   const car = carFromLocation || cars.find((c) => c.id === id);
-  console.log(car);
 
   if (!car) return <div>Car not found</div>;
   return (
@@ -23,7 +22,7 @@ const RentalSummary = () => {
           of your rental car.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-2 items-center">
+      <div className="grid grid-cols-2 gap-5 items-center">
         <div
           className="flex justify-center items-center bg-cover bg-center rounded-xl h-full"
           style={{ backgroundImage: `url(${ad2Background})` }}

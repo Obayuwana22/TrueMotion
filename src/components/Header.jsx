@@ -6,13 +6,11 @@ import settings from "../assets/svg/Settings.svg";
 import search from "../assets/svg/search-normal.svg";
 import filter from "../assets/svg/search-filter.svg";
 import { useGlobalContext } from "../context/GlobalContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Header = () => {
   const { isFilterActive, setIsFilterActive } = useGlobalContext();
-
-  const { carName } = useParams();
-  console.log(carName);
+  const { carName, userID } = useParams();
 
   return (
     <div className="bg-primary-white">
@@ -21,11 +19,13 @@ const Header = () => {
           <h1 className="uppercase font-bold text-2xl text-primary-500">
             truemotion
           </h1>
-          <div className="h-[28px] w-[28px] rounded-full">
-            <img src={user} alt="" />
-          </div>
+          <Link to={`/user/${userID}`}>
+            <div className="h-[28px] w-[28px] rounded-full">
+              <img src={user} alt="" />
+            </div>
+          </Link>
         </div>
-        <div className={`${carName && "hidden"}`}>
+        <div className={`${carName || userID ? "hidden" : ""}`}>
           <Search />
         </div>
       </div>
@@ -36,7 +36,7 @@ const Header = () => {
             <h1 className="uppercase font-bold text-2xl text-primary-500">
               truemotion
             </h1>
-            <div className={`relative ${carName && "hidden"} `}>
+            <div className={`relative ${carName || userID ? "hidden" : ""} `}>
               <img src={search} alt="" className="absolute ml-5 top-2" />
               <input
                 type="text"

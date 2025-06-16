@@ -1,8 +1,10 @@
+import { useParams } from "react-router-dom";
 import { footer } from "../data";
 
 const Footer = () => {
+  const { userID } = useParams();
   return (
-    <div className="p-5 bg-primary-white xl:px-12 xl:pt-12">
+    <div className={`p-5 bg-primary-white xl:px-12 xl:pt-12 ${userID ? "hidden" : "block"}`}>
       <div className="xl:flex xl:justify-between">
         <div className="mb-10">
           <h1 className="uppercase font-bold text-2xl text-primary-500 mb-5">

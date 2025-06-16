@@ -4,8 +4,11 @@ import {
   HomeLayoutPage,
   LandingPage,
   RentalPaymentPage,
+  UserPage,
 } from "./pages";
 import ScrollToTop from "./utils/ScrollToTop";
+import ContentArea from "./components/user/ContentArea";
+import User from "./components/user/User";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,16 @@ const router = createBrowserRouter([
       {
         path: "/car/:carName/rent",
         element: <RentalPaymentPage />,
+      },
+      {
+        path: "/user/:userID",
+        element: <User />,
+        children: [
+          {
+            path: "/user/:userID/content",
+            element: <ContentArea />,
+          },
+        ],
       },
     ],
   },
