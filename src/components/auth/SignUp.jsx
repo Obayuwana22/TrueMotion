@@ -1,36 +1,50 @@
 import React, { useState } from "react";
 import { ArrowRight, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
-import { GrGithub } from "react-icons/gr";
+import { FaApple } from "react-icons/fa";
 import Input from "./Input";
 import { Link } from "react-router-dom";
 
+
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Submitted");
   };
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <div className="bg-primary-white w-[500px] rounded-2xl shadow-2xl">
+      <form onSubmit={handleSubmit}>
+        <div className="bg-primary-white max-w-[500px] rounded-2xl shadow-2xl">
           <div className="p-10">
-            <div className="flex flex-col gap-3 items-center">
+            <div className="flex flex-col gap-3 items-center ">
               <div className="p-3 rounded-xl bg-gradient-to-r from-primary-600 to-information-600">
                 <User className="text-primary-white" />
               </div>
               <h1 className="font-semibold">Create your account</h1>
-              <p className="mb-5 text-secondary-400">
+              <p className="mb-5 text-secondary-400 text-center">
                 Join thousands of users building amazing things
               </p>
             </div>
 
             <div className="flex flex-col space-y-3 font-semibold">
               <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer ">
-                <GrGithub />
-                <span> Continue with GitHub</span>
+                <FaApple />
+                <span> Continue with Apple</span>
               </button>
               <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer">
                 <FcGoogle />
@@ -40,7 +54,10 @@ const SignUp = () => {
 
             <div className="flex items-center justify-center gap-2 uppercase text-xs my-7 ">
               <div className="flex-1 w-[50px] h-px bg-secondary-100"></div>
-              <span className="whitespace-nowrap text-secondary-400"> or continue with email</span>
+              <span className="whitespace-nowrap text-secondary-400">
+                {" "}
+                or continue with email
+              </span>
               <div className="flex-1 w-[50px] h-px bg-secondary-100"></div>
             </div>
 
@@ -57,6 +74,8 @@ const SignUp = () => {
                     name="fullName"
                     placeholder="Enter your full name"
                     className="w-full"
+                    value={formData.fullName}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -73,6 +92,8 @@ const SignUp = () => {
                     name="email"
                     placeholder="Enter your email"
                     className="w-full"
+                    value={formData.email}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -89,6 +110,8 @@ const SignUp = () => {
                     name="password"
                     placeholder="Create a strong password"
                     className="w-full"
+                    value={formData.password}
+                    onChange={handleChange}
                   />
                   <button
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-secondary-300  hover:text-secondary-500 transition-colors"
