@@ -26,14 +26,14 @@ const Login = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <div className=" bg-primary-white rounded-2xl shadow-2xl p-10 md:w-[500px]">
+      <div className=" bg-primary-white rounded-2xl shadow-2xl p-10 w-full md:w-[500px]">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-3 items-center ">
             <div className="p-3 rounded-xl bg-gradient-to-r from-primary-600 to-information-600">
               <Lock className="text-primary-white" />
             </div>
-            <h1 className="font-semibold">Welcome back</h1>
-            <p className="mb-5 text-secondary-400 text-center">
+            <h1 className="font-semibold">Welcome Back</h1>
+            <p className="mb-5 text-secondary-400 text-center ">
               Sign in to your account to continue
             </p>
           </div>
@@ -78,13 +78,13 @@ const Login = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex items-center justify-between ">
-                <label htmlFor="password" className=" text-sm font-medium">
+              <div className="flex items-center justify-between">
+                <label htmlFor="password" className="font-medium text-sm">
                   Password
                 </label>
                 <Link
                   to={"/forgot-password"}
-                  className="text-xs text-primary-500 font-semibold hover:text-primary-600"
+                  className="text-xs font-semibold text-primary-500 hover:text-primary-600"
                 >
                   Forgot password?
                 </Link>
@@ -116,7 +116,7 @@ const Login = () => {
 
           <div className="flex gap-2 my-5 text-xs">
             <Input type="checkbox" />
-            <p>Remember me for 30 days</p>
+            <p className="text-xs ">Remember me in 30 days</p>
           </div>
 
           <button
