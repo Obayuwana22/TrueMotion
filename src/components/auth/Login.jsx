@@ -5,10 +5,9 @@ import { FaApple } from "react-icons/fa";
 import Input from "./Input";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
     email: "",
     password: "",
   });
@@ -33,11 +32,11 @@ const SignUp = () => {
             <div className="p-10">
               <div className="flex flex-col gap-3 items-center ">
                 <div className="p-3 rounded-xl bg-gradient-to-r from-primary-600 to-information-600">
-                  <User className="text-primary-white" />
+                  <Lock className="text-primary-white" />
                 </div>
-                <h1 className="font-semibold">Create your account</h1>
+                <h1 className="font-semibold">Welcome back</h1>
                 <p className="mb-5 text-secondary-400 text-center">
-                  Join thousands choosing smarter car rentals.
+                  Sign in to your account to continue
                 </p>
               </div>
 
@@ -63,24 +62,6 @@ const SignUp = () => {
 
               <div className="space-y-5">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="fullName" className="font-medium text-sm">
-                    Full Name
-                  </label>
-                  <div className="relative">
-                    <User className=" absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-300 w-4 h-4" />
-                    <Input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      placeholder="Enter your full name"
-                      className="w-full"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
                   <label htmlFor="email" className="font-medium text-sm">
                     Email Address
                   </label>
@@ -99,9 +80,17 @@ const SignUp = () => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="password" className="font-medium text-sm">
-                    Password
-                  </label>
+                  <div className="flex items-center justify-between ">
+                    <label htmlFor="password" className=" text-sm font-medium">
+                      Password
+                    </label>
+                    <Link
+                      to={"/forgot-password"}
+                      className="text-xs text-primary-500 font-semibold hover:text-primary-600"
+                    >
+                      Forgot password?
+                    </Link>
+                  </div>
                   <div className="relative">
                     <Lock className=" absolute left-3 top-1/2 transform -translate-y-1/2 text-secondary-300 w-4 h-4" />
                     <Input
@@ -124,44 +113,29 @@ const SignUp = () => {
                       )}
                     </button>
                   </div>
-                  <p className="text-xs text-secondary-300">
-                    Must be at least 8 characters with numbers and letter
-                  </p>
                 </div>
               </div>
 
               <div className="flex gap-2 my-5 text-xs">
                 <Input type="checkbox" />
-                <p>
-                  I agree to the{" "}
-                  <a
-                    href="#"
-                    className="underline text-primary-500 hover:text-primary-600"
-                  >
-                    Terms of Services
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="#"
-                    className="underline text-primary-500 hover:text-primary-600"
-                  >
-                    Privacy Policy
-                  </a>
-                </p>
+                <p>Remember me for 30 days</p>
               </div>
 
               <button
                 type="submit"
                 className="flex gap-3 items-center justify-center text-primary-white py-3 rounded-md cursor-pointer bg-gradient-to-r from-primary-600 to-information-600 w-full  hover:from-primary-800 hover:to-information-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span className="font-semibold">Create Account</span>
+                <span className="font-semibold">Sign In</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <p className="text-center mt-5 ">
-                <span>Already have an account?</span>
-                <Link to={"/login"} className="text-primary-500 font-semibold ml-1 hover:text-primary-600 cursor-pointer">
-                  Sign in
+                <span>Don't have an account?</span>
+                <Link
+                  to={"/"}
+                  className="text-primary-500 font-semibold ml-1 hover:text-primary-600 cursor-pointer"
+                >
+                  Sign up
                 </Link>
               </p>
             </div>
@@ -172,4 +146,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;

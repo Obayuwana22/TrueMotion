@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   CarDetailsPage,
+  ForgotPasswordPage,
   HomeLayoutPage,
   LandingPage,
+  LoginPage,
   RentalPaymentPage,
   SignUpPage,
   UserPage,
 } from "./pages";
 import ScrollToTop from "./utils/ScrollToTop";
-import ContentArea from "./components/user/ContentArea";
-import User from "./components/user/User";
 import Dashboard from "./components/user/navbarLinks/dashboard/Dashboard";
 import CarRent from "./components/user/navbarLinks/CarRent";
 
@@ -17,6 +17,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <SignUpPage />,
+  },
+  {
+    path: "login",
+    element: <LoginPage />,
+  },
+{
+    path: "forgot-password",
+    element: <ForgotPasswordPage />,
   },
   {
     path: "/home",
