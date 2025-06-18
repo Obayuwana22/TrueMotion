@@ -41,7 +41,7 @@ const SignUp = () => {
               </p>
             </div>
 
-            <div className="flex flex-col space-y-3 font-semibold">
+            <div className="flex flex-col space-y-3 font-semibold text-sm">
               <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer ">
                 <FaApple />
                 <span> Continue with Apple</span>
@@ -63,7 +63,7 @@ const SignUp = () => {
 
             <div className="space-y-5">
               <div className="flex flex-col gap-2">
-                <label htmlFor="fullName" className="font-semibold">
+                <label htmlFor="fullName" className="font-medium text-sm">
                   Full Name
                 </label>
                 <div className="relative">
@@ -81,7 +81,7 @@ const SignUp = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="email" className="font-semibold">
+                <label htmlFor="email" className="font-medium text-sm">
                   Email Address
                 </label>
                 <div className="relative">
@@ -99,7 +99,7 @@ const SignUp = () => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="password" className="font-semibold">
+                <label htmlFor="password" className="font-medium text-sm">
                   Password
                 </label>
                 <div className="relative">
@@ -160,7 +160,7 @@ const SignUp = () => {
 
             <p className="text-center mt-5 ">
               <span>Already have an account?</span>
-              <Link className="text-primary-500 font-semibold hover:text-primary-600">
+              <Link className="text-primary-500 font-semibold ml-1 hover:text-primary-600">
                 Sign in
               </Link>
             </p>
