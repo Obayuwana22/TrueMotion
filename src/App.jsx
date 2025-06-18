@@ -4,15 +4,22 @@ import {
   HomeLayoutPage,
   LandingPage,
   RentalPaymentPage,
+  SignUpPage,
   UserPage,
 } from "./pages";
 import ScrollToTop from "./utils/ScrollToTop";
 import ContentArea from "./components/user/ContentArea";
 import User from "./components/user/User";
+import Dashboard from "./components/user/navbarLinks/dashboard/Dashboard";
+import CarRent from "./components/user/navbarLinks/CarRent";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <SignUpPage />,
+  },
+  {
+    path: "/home",
     element: (
       <>
         <ScrollToTop />
@@ -25,20 +32,28 @@ const router = createBrowserRouter([
         element: <LandingPage />,
       },
       {
-        path: "/car/:id",
+        path: "car/:id",
         element: <CarDetailsPage />,
       },
       {
-        path: "/car/:carName/rent",
+        path: "car/:carName/rent",
         element: <RentalPaymentPage />,
       },
       {
-        path: "/user/:userID",
-        element: <User />,
+        path: "user/:userID",
+        element: <UserPage />,
         children: [
           {
-            path: "/user/:userID/content",
-            element: <ContentArea />,
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+          {
+            path: "car-rent",
+            element: <CarRent />,
           },
         ],
       },

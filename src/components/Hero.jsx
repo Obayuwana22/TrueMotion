@@ -21,7 +21,7 @@ const Hero = () => {
               {car.adsDescription}
             </p>
 
-            <Link to={`/car/${car.id}`}>
+            <Link to={`/home/car/${car.id}`}>
               <Button
                 text="Rental car"
                 className={`font-semibold text-xs py-3 px-8 xl:px-5 xl:py-3 xl:mt-2 xl:text-base ${

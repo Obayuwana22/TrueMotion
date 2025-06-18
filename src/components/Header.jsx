@@ -10,7 +10,8 @@ import { Link, useParams } from "react-router-dom";
 
 const Header = () => {
   const { isFilterActive, setIsFilterActive } = useGlobalContext();
-  const { carName, userID } = useParams();
+  const { carName } = useParams();
+  const { userID } = useGlobalContext();
 
   return (
     <div className="bg-primary-white">

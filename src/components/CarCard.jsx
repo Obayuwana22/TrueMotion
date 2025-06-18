@@ -58,7 +58,7 @@ const CarCard = ({ car }) => {
             <span className="text-xs text-secondary-300 ml-1">day</span>
             <div className="text-xs font-medium text-secondary-300">$80.00</div>
           </div>
-          <Link to={`/car/${car.id}`}>
+          <Link to={`/home/car/${car.id}`}>
             <Button text="Rent Now" />
           </Link>
         </div>

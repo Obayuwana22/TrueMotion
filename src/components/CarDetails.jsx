@@ -141,7 +141,7 @@ const CarDetails = () => {
                     ${car.slashedPrice}.00
                   </div>
                 </div>
-                <Link to={`/car/${car.id}/rent`} state={{ car }}>
+                <Link to={`/home/car/${car.id}/rent`} state={{ car }}>
                   <Button
                     text="Rent Now"
                     className="font-semibold text-base px-10 py-4"
