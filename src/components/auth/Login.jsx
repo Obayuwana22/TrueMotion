@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <div className="flex flex-col justify-center items-center md:h-screen">
-      <div className=" bg-primary-white rounded-2xl shadow-2xl p-10 w-full md:w-[500px]">
+      <div className="  rounded-2xl shadow-2xl p-10 w-full md:w-[500px]">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-3 items-center ">
             <div className="p-3 rounded-xl bg-gradient-to-r from-primary-600 to-information-600">
