@@ -26,7 +26,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center md:h-screen">
       <div className=" bg-primary-white rounded-2xl shadow-2xl p-10 w-full md:w-[500px]">
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col gap-3 items-center ">
@@ -128,10 +128,9 @@ const SignUp = () => {
             </div>
           </div>
 
-          <div className="flex gap-2 my-5 text-xs">
-            <Input type="checkbox" />
+          <div className="my-5 text-xs">
             <p>
-              I agree to the{" "}
+              By signing up, you agree to our{" "}
               <a
                 href="#"
                 className="underline text-primary-500 hover:text-primary-600"
@@ -145,6 +144,7 @@ const SignUp = () => {
               >
                 Privacy Policy
               </a>
+              .
             </p>
           </div>
 
