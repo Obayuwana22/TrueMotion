@@ -43,9 +43,8 @@ const Login = () => {
                 <Lock className="text-primary-white" />
               </div>
               <h1 className="font-semibold">Welcome Back</h1>
-              <p className="mb-5 text-secondary-400 text-center mx-5 ">
-                Sign in to your account to continue
-                
+              <p className="mb-5 text-secondary-400 text-center">
+                Sign in to your account to continue your experience
               </p>
             </div>
 
