@@ -7,6 +7,7 @@ import { BiToggleRight } from "react-icons/bi";
 
 const UserNavbar = () => {
   const { userID } = useParams();
+
   return (
     <div className="relative py-10 bg-primary-white">
       {/* <div className="relative py-10 bg-primary-white hidden lg:block"> */}
@@ -24,7 +25,7 @@ const UserNavbar = () => {
               const Icon = list.icon;
               return (
                 <div key={list.id}>
-                  <Link to={`/user${userID}/${list.path}`}>
+                  <Link to={`/home/user${userID}/${list.path}`}>
                     <div
                       className={`flex items-end gap-3 mx-4 px-3 py-4 pr-20 cursor-pointer group hover:text-primary-white hover:bg-primary-500 hover:rounded-lg transition ease-in-out duration-300 
                        `}

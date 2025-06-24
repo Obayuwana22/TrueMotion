@@ -30,7 +30,7 @@ const ForgotPassword = () => {
           src="https://lottie.host/256e8dcf-05b5-48b6-8b66-fce5cfdca415/FBqFFydiFy.lottie"
           loop
           autoplay
-          className="hidden md:inline"
+          className="hidden md:inline-block w-full xl:max-w-[50%]"
         />
         <form onSubmit={handleSubmit}>
           <div className="p-10 w-full md:w-[500px]">

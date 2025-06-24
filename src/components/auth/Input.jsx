@@ -4,7 +4,6 @@ const Input = ({ className = "", ...props }) => {
   return (
     <input
       {...props}
-      required
       className={`border pl-10 p-3 text-sm border-secondary-100 placeholder:text-secondary-300 rounded-md ${className}`}
     />
   );

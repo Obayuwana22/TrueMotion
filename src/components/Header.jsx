@@ -1,5 +1,5 @@
 import Search from "./Search";
-import user from "../assets/png/user.png";
+import userPic from "../assets/png/user.png";
 import like from "../assets/svg/Like.svg";
 import notification from "../assets/svg/Notification.svg";
 import settings from "../assets/svg/Settings.svg";
@@ -7,11 +7,14 @@ import search from "../assets/svg/search-normal.svg";
 import filter from "../assets/svg/search-filter.svg";
 import { useGlobalContext } from "../context/GlobalContext";
 import { Link, useParams } from "react-router-dom";
+import { useAuthContext } from "../context/AuthContext";
 
 const Header = () => {
   const { isFilterActive, setIsFilterActive } = useGlobalContext();
   const { carName } = useParams();
-  const { userID } = useGlobalContext();
+  const { user } = useAuthContext();
+  const currentUser = user?.uid;
+
 
   return (
     <div className="bg-primary-white">
@@ -20,13 +23,13 @@ const Header = () => {
           <h1 className="uppercase font-bold text-2xl text-primary-500">
             truemotion
           </h1>
-          <Link to={`/user/${userID}`}>
+          <Link to={`/home/user/${currentUser}`}>
             <div className="h-[28px] w-[28px] rounded-full">
-              <img src={user} alt="" />
+              <img src={userPic} alt="" />
             </div>
           </Link>
         </div>
-        <div className={`${carName || userID ? "hidden" : ""}`}>
+        <div className={`${carName || currentUser ? "hidden" : ""}`}>
           <Search />
         </div>
       </div>
@@ -37,7 +40,9 @@ const Header = () => {
             <h1 className="uppercase font-bold text-2xl text-primary-500">
               truemotion
             </h1>
-            <div className={`relative ${carName || userID ? "hidden" : ""} `}>
+            <div
+              className={`relative ${carName || currentUser ? "hidden" : ""} `}
+            >
               <img src={search} alt="" className="absolute ml-5 top-2" />
               <input
                 type="text"
@@ -64,7 +69,7 @@ const Header = () => {
               <img src={settings} alt="settings" />
             </div>
             <div className="h-[44px] w-[44px] rounded-full">
-              <img src={user} alt="" />
+              <img src={userPic} alt="" />
             </div>
           </div>
         </div>

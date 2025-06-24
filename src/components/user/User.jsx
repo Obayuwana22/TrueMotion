@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import UserNavbar from "./UserNavbar";
-import { Outlet, useParams } from "react-router-dom";
-import { useGlobalContext } from "../../context/GlobalContext";
+import { Navigate, Outlet, useParams } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 
 const User = () => {
+  const { user, loading } = useAuthContext();
   const { userID } = useParams();
-  const { setUserID } = useGlobalContext();
 
-  useEffect(() => {
-    if (userID) setUserID(userID);
-  }, [userID]);
+  if (loading) return <p>Loading...</p>;
+  if (!user) return <Navigate to="/login" />;
+
+  if (user.uid !== userID)
+    return <Navigate to={`/home/user/${user.uid}`} replace />;
+
   return (
     <div className="flex">
       <UserNavbar />

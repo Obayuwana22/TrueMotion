@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import {
   CarDetailsPage,
   ForgotPasswordPage,
@@ -9,31 +13,42 @@ import {
   SignUpPage,
   UserPage,
 } from "./pages";
-import ScrollToTop from "./utils/ScrollToTop";
+// import ScrollToTop from "./utils/ScrollToTop";
 import Dashboard from "./components/user/navbarLinks/dashboard/Dashboard";
 import CarRent from "./components/user/navbarLinks/CarRent";
+import ErrorPage from "./components/ErrorPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Unauthorized from "./components/Unauthorized";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Navigate to="/signup" replace />,
+  },
+  {
+    path: "/signup",
     element: <SignUpPage />,
   },
   {
-    path: "login",
+    path: "/login",
     element: <LoginPage />,
   },
-{
-    path: "forgot-password",
+  {
+    path: "/forgot-password",
     element: <ForgotPasswordPage />,
   },
+
   {
     path: "/home",
     element: (
       <>
-        <ScrollToTop />
-        <HomeLayoutPage />
+        {/* <ScrollToTop /> */}
+        <ProtectedRoute>
+          <HomeLayoutPage />
+        </ProtectedRoute>
       </>
     ),
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -49,12 +64,13 @@ const router = createBrowserRouter([
       },
       {
         path: "user/:userID",
-        element: <UserPage />,
+        element: (
+          <ProtectedRoute>
+            <UserPage />
+          </ProtectedRoute>
+        ),
+        errorElement: <ErrorPage />,
         children: [
-          {
-            index: true,
-            element: <Dashboard />,
-          },
           {
             path: "dashboard",
             element: <Dashboard />,
@@ -66,6 +82,11 @@ const router = createBrowserRouter([
         ],
       },
     ],
+  },
+
+  {
+    path: "/unauthorized",
+    element: <Unauthorized />,
   },
 ]);
 const App = () => {

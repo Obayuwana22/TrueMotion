@@ -3,10 +3,16 @@ import { ArrowRight, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import Input from "./Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../services/auth";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -20,21 +26,74 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted");
+
+    const { email, password } = formData;
+
+    // validation
+    if (!email || !password) {
+      toast.error("All fields are required.");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      toast.error("Email must include '@' symbol.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Enter a valid email address.");
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters.");
+      return;
+    }
+
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast.error("Password must include both letters and numbers.");
+      return;
+    }
+
+    // create new user account
+    try {
+      setLoading(true);
+      // await login(email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential.user);
+      toast.success("welcome Back!");
+      setTimeout(() => {
+        navigate("/home");
+      }, 3000);
+      setFormData({ fullName: "", email: "", password: "" });
+    } catch (error) {
+      // console.log(error);
+      toast.error(error.message);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     // <div className="flex flex-col justify-center items-center h-screen bg-primary-white">
     //   <div className="p-10 w-full md:w-[500px] md:rounded-2xl md:shadow-2xl">
     <div className="  bg-primary-white">
+      <ToastContainer />
       <div className="flex justify-center items-center h-screen">
         <DotLottieReact
           src="https://lottie.host/256e8dcf-05b5-48b6-8b66-fce5cfdca415/FBqFFydiFy.lottie"
           loop
           autoplay
-          className="hidden md:inline"
+          className="hidden md:inline-block w-full xl:max-w-[50%]"
         />
         <form onSubmit={handleSubmit}>
           <div className="p-10 w-full md:w-[500px]">
@@ -111,6 +170,7 @@ const Login = () => {
                     onChange={handleChange}
                   />
                   <button
+                    type="button"
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-secondary-300  hover:text-secondary-500 transition-colors"
                     onClick={() => setShowPassword(!showPassword)}
                   >
@@ -131,16 +191,22 @@ const Login = () => {
 
             <button
               type="submit"
-              className="flex gap-3 items-center justify-center text-primary-white py-3 rounded-md cursor-pointer bg-gradient-to-r from-primary-600 to-information-600 w-full  hover:from-primary-800 hover:to-information-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+              className="font-semibold text-primary-white py-3 rounded-md cursor-pointer bg-gradient-to-r from-primary-600 to-information-600 w-full  hover:from-primary-800 hover:to-information-700 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
             >
-              <span className="font-semibold">Sign In</span>
-              <ArrowRight className="w-4 h-4" />
+              {loading ? (
+                <div className="spinner"></div>
+              ) : (
+                <div className="flex gap-3 items-center justify-center ">
+                  <span>Sign In</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              )}
             </button>
 
             <p className="text-center mt-5 ">
               <span>Don't have an account?</span>
               <Link
-                to={"/"}
+                to={"/signup"}
                 className="text-primary-500 font-semibold ml-1 hover:text-primary-600 cursor-pointer"
               >
                 Sign up
