@@ -2,11 +2,13 @@ import React from "react";
 import { userNavbarLinks } from "../../data";
 import { HiOutlineLogout } from "react-icons/hi";
 import ToggleTheme from "./ToggleTheme";
-import { NavLink, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { BiToggleRight } from "react-icons/bi";
 
 const UserNavbar = () => {
   const { userID } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="relative py-10 bg-primary-white">
@@ -23,18 +25,37 @@ const UserNavbar = () => {
 
             {link.list.map((list) => {
               const Icon = list.icon;
+              const fullPath = `/home/user/${userID}/${list.path}`;
+              const isActive = location.pathname === fullPath;
               return (
                 <div key={list.id}>
-                  <NavLink
-                    to={`/home/user/${userID}/${list.path}`}
-                    className={`flex items-end gap-3 mx-4 px-3 py-4 pr-20 cursor-pointer group hover:text-primary-white hover:bg-primary-500 hover:rounded-lg transition ease-in-out duration-300 
+                  <div
+                    onClick={() => navigate(fullPath, { replace: true })}
+                    className={`flex items-end gap-3 mx-4 my-2 px-3 py-4 pr-20 cursor-pointer group transition ease-in-out duration-300
+                      ${
+                        isActive
+                          ? "text-primary-white bg-primary-500 rounded-lg"
+                          : "hover:text-primary-white hover:bg-primary-500 hover:rounded-lg"
+                      }
                        `}
                   >
-                    <Icon className="text-secondary-300 text-2xl group-hover:text-primary-white  " />
-                    <div className="text-secondary-300 font-medium capitalize group-hover:text-primary-white  ">
+                    <Icon
+                      className={`text-2xl ${
+                        isActive
+                          ? "text-white"
+                          : "text-secondary-300 group-hover:text-white"
+                      }`}
+                    />
+                    <div
+                      className={`font-medium capitalize ${
+                        isActive
+                          ? "text-white"
+                          : "text-secondary-300 group-hover:text-white"
+                      }`}
+                    >
                       {list.text}
                     </div>
-                  </NavLink>
+                  </div>
                 </div>
               );
             })}
