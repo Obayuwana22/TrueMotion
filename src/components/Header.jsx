@@ -15,7 +15,6 @@ const Header = () => {
   const { user } = useAuthContext();
   const currentUser = user?.uid;
 
-
   return (
     <div className="bg-primary-white">
       <div className="px-5 pb-8 mt-8  xl:hidden ">
@@ -68,9 +67,11 @@ const Header = () => {
             <div>
               <img src={settings} alt="settings" />
             </div>
-            <div className="h-[44px] w-[44px] rounded-full">
-              <img src={userPic} alt="" />
-            </div>
+            <Link to={`/home/user/${currentUser}`}>
+              <div className="h-[44px] w-[44px] rounded-full">
+                <img src={userPic} alt="" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

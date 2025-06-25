@@ -2,7 +2,7 @@ import React from "react";
 import { userNavbarLinks } from "../../data";
 import { HiOutlineLogout } from "react-icons/hi";
 import ToggleTheme from "./ToggleTheme";
-import { Link, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { BiToggleRight } from "react-icons/bi";
 
 const UserNavbar = () => {
@@ -25,17 +25,16 @@ const UserNavbar = () => {
               const Icon = list.icon;
               return (
                 <div key={list.id}>
-                  <Link to={`/home/user${userID}/${list.path}`}>
-                    <div
-                      className={`flex items-end gap-3 mx-4 px-3 py-4 pr-20 cursor-pointer group hover:text-primary-white hover:bg-primary-500 hover:rounded-lg transition ease-in-out duration-300 
+                  <NavLink
+                    to={`/home/user/${userID}/${list.path}`}
+                    className={`flex items-end gap-3 mx-4 px-3 py-4 pr-20 cursor-pointer group hover:text-primary-white hover:bg-primary-500 hover:rounded-lg transition ease-in-out duration-300 
                        `}
-                    >
-                      <Icon className="text-secondary-300 text-2xl group-hover:text-primary-white  " />
-                      <div className="text-secondary-300 font-medium capitalize group-hover:text-primary-white  ">
-                        {list.text}
-                      </div>
+                  >
+                    <Icon className="text-secondary-300 text-2xl group-hover:text-primary-white  " />
+                    <div className="text-secondary-300 font-medium capitalize group-hover:text-primary-white  ">
+                      {list.text}
                     </div>
-                  </Link>
+                  </NavLink>
                 </div>
               );
             })}
