@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_API_KEY,
+  apiKey: "AIzaSyBtSRFbYmyYFoLawQLhUKlSB7T7y7OC6VM",
   authDomain: "true-motion-23319.firebaseapp.com",
   projectId: "true-motion-23319",
   storageBucket: "true-motion-23319.firebasestorage.app",
