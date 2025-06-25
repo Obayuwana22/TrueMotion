@@ -26,6 +26,3 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-//   if (!user || user.uid !== userID) {
-//     return <Navigate to="/unauthorized" replace />;
-//   }

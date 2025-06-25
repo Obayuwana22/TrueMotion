@@ -3,10 +3,13 @@ import { ArrowRight, Eye, EyeOff, Lock, Mail, User } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import Input from "./Input";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
+import { auth, googleProvider } from "../../services/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +28,29 @@ const SignUp = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleGoogleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      // const credential = GoogleAuthProvider.credentialFromResult(result);
+      // console.log(credential);
+
+      if (user.emailVerified === true) {
+        toast.success("Account created successfully!");
+        setTimeout(() => {
+          navigate("/home");
+        }, 3000);
+      }
+
+      console.log(result);
+    } catch (error) {
+      toast.error(error.message);
+      console.log(error);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -107,13 +133,16 @@ const SignUp = () => {
             </div>
 
             <div className="flex flex-col space-y-3 font-semibold text-sm">
+              <button
+                onClick={handleGoogleSubmit}
+                className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer"
+              >
+                <FcGoogle />
+                <span>Continue with Google</span>
+              </button>
               <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer ">
                 <FaApple />
                 <span> Continue with Apple</span>
-              </button>
-              <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer">
-                <FcGoogle />
-                <span>Continue with Google</span>
               </button>
             </div>
 
@@ -179,7 +208,7 @@ const SignUp = () => {
                     onChange={handleChange}
                   />
                   <button
-                  type="button"
+                    type="button"
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-secondary-300  hover:text-secondary-500 transition-colors"
                     onClick={() => setShowPassword(!showPassword)}
                   >

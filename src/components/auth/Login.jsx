@@ -5,8 +5,8 @@ import { FaApple } from "react-icons/fa";
 import Input from "./Input";
 import { Link, useNavigate } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../services/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../../services/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +25,24 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
+   const handleGoogleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        const user = result.user;
+        if (user.emailVerified === true) {
+          toast.success("welcome Back!");
+          setTimeout(() => {
+            navigate("/home");
+          }, 3000);
+        }
+        console.log(result);
+      } catch (error) {
+        toast.error(error.message);
+        console.log(error);
+      }
+    };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -108,13 +126,13 @@ const Login = () => {
             </div>
 
             <div className="flex flex-col space-y-3 font-semibold text-sm">
+               <button onClick={handleGoogleSubmit} className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer">
+                <FcGoogle />
+                <span>Continue with Google</span>
+              </button>
               <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer ">
                 <FaApple />
                 <span> Continue with Apple</span>
-              </button>
-              <button className="flex items-center justify-center gap-3 border py-3 rounded-md border-secondary-100 cursor-pointer">
-                <FcGoogle />
-                <span>Continue with Google</span>
               </button>
             </div>
 
@@ -164,7 +182,7 @@ const Login = () => {
                     type={showPassword ? "text" : "password"}
                     id="password"
                     name="password"
-                    placeholder="Create a strong password"
+                    placeholder="Enter your password"
                     className="w-full"
                     value={formData.password}
                     onChange={handleChange}
