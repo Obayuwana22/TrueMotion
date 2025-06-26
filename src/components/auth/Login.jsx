@@ -34,7 +34,7 @@ const Login = () => {
         if (user.emailVerified === true) {
           toast.success("welcome Back!");
           setTimeout(() => {
-            navigate("/home");
+            navigate("/");
           }, 3000);
         }
         console.log(result);
@@ -89,7 +89,7 @@ const Login = () => {
       console.log(userCredential.user);
       toast.success("welcome Back!");
       setTimeout(() => {
-        navigate("/home");
+        navigate("/");
       }, 3000);
       setFormData({ fullName: "", email: "", password: "" });
     } catch (error) {

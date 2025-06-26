@@ -17,8 +17,26 @@ import Unauthorized from "./components/Unauthorized";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/signup" replace />,
+    element: (
+      <>
+        {/* <ProtectedRoute> */}
+        <HomeLayoutPage />
+        {/* </ProtectedRoute> */}
+      </>
+    ),
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <LandingPage />,
+      },
+    ],
   },
+
+  // {
+  //   path: "/",
+  //   element: <Navigate to="/signup" replace />,
+  // },
   {
     path: "/signup",
     element: <SignUpPage />,
@@ -32,28 +50,10 @@ const router = createBrowserRouter([
     element: <ForgotPasswordPage />,
   },
 
-  {
-    path: "/home",
-    element: (
-      <>
-        <ProtectedRoute>
-          <HomeLayoutPage />
-        </ProtectedRoute>
-      </>
-    ),
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <LandingPage />,
-      },
-    ],
-  },
-
-  {
-    path: "/unauthorized",
-    element: <Unauthorized />,
-  },
+  // {
+  //   path: "/unauthorized",
+  //   element: <Unauthorized />,
+  // },
 ]);
 const App = () => {
   return (
