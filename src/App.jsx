@@ -4,18 +4,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {
-  CarDetailsPage,
   ForgotPasswordPage,
   HomeLayoutPage,
   LandingPage,
   LoginPage,
-  RentalPaymentPage,
   SignUpPage,
-  UserPage,
 } from "./pages";
-// import ScrollToTop from "./utils/ScrollToTop";
-import Dashboard from "./components/user/navbarLinks/dashboard/Dashboard";
-import CarRent from "./components/user/navbarLinks/CarRent";
 import ErrorPage from "./components/ErrorPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Unauthorized from "./components/Unauthorized";
@@ -42,7 +36,6 @@ const router = createBrowserRouter([
     path: "/home",
     element: (
       <>
-        {/* <ScrollToTop /> */}
         <ProtectedRoute>
           <HomeLayoutPage />
         </ProtectedRoute>
@@ -53,37 +46,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <LandingPage />,
-      },
-      {
-        path: "car/:id",
-        element: <CarDetailsPage />,
-      },
-      {
-        path: "car/:carName/rent",
-        element: <RentalPaymentPage />,
-      },
-      {
-        path: "user/:userID",
-        element: (
-          <ProtectedRoute>
-            <UserPage />
-          </ProtectedRoute>
-        ),
-        errorElement: <ErrorPage />,
-        children: [
-          {
-            index: true,
-            element: <Navigate to="dashboard" replace/>,
-          },
-          {
-            path: "dashboard",
-            element: <Dashboard />,
-          },
-          {
-            path: "car-rent",
-            element: <CarRent />,
-          },
-        ],
       },
     ],
   },
