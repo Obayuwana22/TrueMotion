@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
+import Footer from "./Footer";
 
 const HomeLayout = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -10,6 +11,8 @@ const HomeLayout = () => {
     <div>
       {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
       <Outlet />
+
+      {!isOwnerPath && <Footer />}
     </div>
   );
 };

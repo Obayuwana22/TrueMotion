@@ -6,13 +6,13 @@ import Newsletter from "./Newsletter";
 
 const Landing = () => {
   return (
-    <div>
+    <main>
       <Hero />
       <FeaturedSection />
       <Banner />
       <Testimonial />
       <Newsletter />
-    </div>
+    </main>
   );
 };
 export default Landing;
