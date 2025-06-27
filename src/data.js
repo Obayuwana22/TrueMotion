@@ -1,4 +1,4 @@
-import logo from "./assets/svg/logo.svg";
+import favicon from "./assets/svg/favicon.svg";
 import gmail_logo from "./assets/svg/gmail_logo.svg";
 import facebook_logo from "./assets/svg/facebook_logo.svg";
 import instagram_logo from "./assets/svg/instagram_logo.svg";
@@ -45,7 +45,7 @@ import { nanoid } from "nanoid";
 export const cityList = ["New York", "Los Angeles", "Houston", "Chicago"];
 
 export const assets = {
-  logo,
+  favicon,
   gmail_logo,
   facebook_logo,
   instagram_logo,
