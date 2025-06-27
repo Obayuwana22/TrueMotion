@@ -91,8 +91,8 @@ export const assets = {
 
 export const menuLinks = [
   { id: nanoid(), name: "Home", path: "/" },
-  { id: nanoid(), name: "Cars", path: "/cars" },
-  { id: nanoid(), name: "My Bookings", path: "/my-bookings" },
+  { id: nanoid(), name: "Cars", path: "cars" },
+  { id: nanoid(), name: "My Bookings", path: "my-bookings" },
 ];
 
 export const ownerMenuLinks = [
