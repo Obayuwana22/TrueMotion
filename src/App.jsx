@@ -4,6 +4,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import {
+  CarDetailsPage,
+  CarsPage,
+  MyBookingsPage,
   ForgotPasswordPage,
   HomeLayoutPage,
   LandingPage,
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
         index: true,
         element: <LandingPage />,
       },
+      {
+        path: "car-details/:id",
+        element: <CarDetailsPage />,
+      },
+      {
+        path: "cars/:id",
+        element: <CarsPage />,
+      },
+      {
+        path: "my-bookings/:id",
+        element: <MyBookingsPage />,
+      },
     ],
   },
 
@@ -37,18 +52,18 @@ const router = createBrowserRouter([
   //   path: "/",
   //   element: <Navigate to="/signup" replace />,
   // },
-  {
-    path: "/signup",
-    element: <SignUpPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/forgot-password",
-    element: <ForgotPasswordPage />,
-  },
+  // {
+  //   path: "/signup",
+  //   element: <SignUpPage />,
+  // },
+  // {
+  //   path: "/login",
+  //   element: <LoginPage />,
+  // },
+  // {
+  //   path: "/forgot-password",
+  //   element: <ForgotPasswordPage />,
+  // },
 
   // {
   //   path: "/unauthorized",
