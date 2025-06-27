@@ -1,6 +1,7 @@
 import Hero from "./Hero";
 import FeaturedSection from "./FeaturedSection";
 import Banner from "./Banner";
+import Testimonial from "./Testimonial";
 
 const Landing = () => {
   return (
@@ -8,6 +9,7 @@ const Landing = () => {
       <Hero />
       <FeaturedSection />
       <Banner />
+      <Testimonial />
     </div>
   );
 };
