@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../data";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { menuLinks } from "../data";
+import favicon from "../../public/favicon.svg"
 
 const Navbar = ({ setShowLogin }) => {
   const location = useLocation();
@@ -14,8 +15,9 @@ const Navbar = ({ setShowLogin }) => {
         location.pathname === "/" && "bg-light"
       }`}
     >
-      <Link to="/">
-        <img src={assets.logo} alt="logo" className="h-8" />
+      <Link to="/"  className="flex items-center gap-2">
+        <img src={favicon} alt="logo" className="h-8" />
+        <span className="text-2xl font-semibold">TrueMotion</span>
       </Link>
 
       <div
