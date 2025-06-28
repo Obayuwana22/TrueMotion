@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import favicon from "./assets/svg/favicon.svg";
 import gmail_logo from "./assets/svg/gmail_logo.svg";
 import facebook_logo from "./assets/svg/facebook_logo.svg";
@@ -40,7 +41,6 @@ import car_image1 from "./assets/png/car_image1.png";
 import car_image2 from "./assets/png/car_image2.png";
 import car_image3 from "./assets/png/car_image3.png";
 import car_image4 from "./assets/png/car_image4.png";
-import { nanoid } from "nanoid";
 
 export const cityList = ["New York", "Los Angeles", "Houston", "Chicago"];
 
@@ -128,7 +128,7 @@ export const ownerMenuLinks = [
 
 export const dummyUserData = {
   _id: "6847f7cab3d8daecdb517095",
-  name: "GreatStack",
+  name: "John Doe",
   email: "admin@example.com",
   role: "owner",
   image: user_profile,

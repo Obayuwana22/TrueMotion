@@ -15,7 +15,7 @@ const Navbar = ({ setShowLogin }) => {
         location.pathname === "/" && "bg-light"
       }`}
     >
-      <Link to="/">
+      <Link to="/" className="flex items-center gap-2">
         <BrandLogo />
       </Link>
 

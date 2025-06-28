@@ -7,7 +7,9 @@ const Footer = () => {
     <footer className="px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500">
       <div className="flex flex-wrap justify-between items-start gap-8 pb-6 border-b border-borderColor">
         <div>
-          <BrandLogo /> {/* add md:h-9 */}
+          <div className="flex items-center gap-2 md:h-9">
+            <BrandLogo />
+          </div>
           <p className="max-w-80 mt-3">
             Premium car rental services with a wide selection of luxury and
             everyday vehicles for all your driving needs.
