@@ -11,7 +11,6 @@ const HomeLayout = () => {
     <div>
       {!isOwnerPath && <Navbar setShowLogin={setShowLogin} />}
       <Outlet />
-
       {!isOwnerPath && <Footer />}
     </div>
   );

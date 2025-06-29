@@ -25,7 +25,7 @@ const Navbar = ({ setShowLogin }) => {
         } ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
       >
         {menuLinks.map((link) => (
-          <Link key={link.id} to={link.path}>
+          <Link key={link.id} to={link.path} onClick={() => setOpen(!open)}>
             {link.name}
           </Link>
         ))}
