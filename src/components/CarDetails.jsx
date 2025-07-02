@@ -121,10 +121,10 @@ const CarDetails = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label htmlFor="dropoff-date">Dropoff Date</label>
+            <label htmlFor="return-date">Return Date</label>
             <input
               type="date"
-              id="dropoff-date"
+              id="return-date"
               className="border border-borderColor px-3 py-2 rounded-lg"
               required
             />

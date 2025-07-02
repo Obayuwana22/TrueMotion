@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuthContext } from "../context/AuthContext";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useAuthContext();
+  const { user, loading } = useGlobalContext();
 
   if (loading) return <p>Loading...</p>;
 
@@ -11,4 +11,3 @@ const ProtectedRoute = ({ children }) => {
 };
 
 export default ProtectedRoute;
-

@@ -7,13 +7,16 @@ import {
   CarDetailsPage,
   CarsPage,
   MyBookingsPage,
-  ForgotPasswordPage,
   HomeLayoutPage,
   LandingPage,
-  LoginPage,
-  SignUpPage,
 } from "./pages";
-import { AddCarPage, DashboardPage, ManageBookingsPage, ManageCarsPage, OwnerLayoutPage } from "./pages/owner";
+import {
+  AddCarPage,
+  DashboardPage,
+  ManageBookingsPage,
+  ManageCarsPage,
+  OwnerLayoutPage,
+} from "./pages/owner";
 import ErrorPage from "./components/ErrorPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Unauthorized from "./components/Unauthorized";
@@ -24,7 +27,7 @@ const router = createBrowserRouter([
     element: (
       <>
         {/* <ProtectedRoute> */}
-        <HomeLayoutPage />
+        {<HomeLayoutPage />}
         {/* </ProtectedRoute> */}
       </>
     ),
@@ -55,7 +58,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <DashboardPage />,
-      }, 
+      },
       {
         path: "add-car",
         element: <AddCarPage />,
@@ -70,28 +73,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-  // {
-  //   path: "/",
-  //   element: <Navigate to="/signup" replace />,
-  // },
-  // {
-  //   path: "/signup",
-  //   element: <SignUpPage />,
-  // },
-  // {
-  //   path: "/login",
-  //   element: <LoginPage />,
-  // },
-  // {
-  //   path: "/forgot-password",
-  //   element: <ForgotPasswordPage />,
-  // },
-
-  // {
-  //   path: "/unauthorized",
-  //   element: <Unauthorized />,
-  // },
 ]);
 const App = () => {
   return (

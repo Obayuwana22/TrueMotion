@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col items-start gap-2">
-            <label htmlFor="pickup-date">Pick-up Date</label>
+            <label htmlFor="pickup-date">Pickup Date</label>
             <input
               type="date"
               id="pickup-date"
@@ -41,10 +41,10 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col items-start gap-2">
-            <label htmlFor="dropoff-date">Drop-off Date</label>
+            <label htmlFor="return-date">Return Date</label>
             <input
               type="date"
-              id="dropoff-date"
+              id="return-date"
               className="text-sm text-gray-500"
               required
             />
