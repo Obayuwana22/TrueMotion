@@ -20,6 +20,7 @@ import {
 import ErrorPage from "./components/ErrorPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Unauthorized from "./components/Unauthorized";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div className="font-plus-jakarta bg-gray-background text-secondary-500 ">
+      <Toaster />
       <RouterProvider router={router} />
     </div>
   );

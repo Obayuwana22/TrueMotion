@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useGlobalContext } from "../context/GlobalContext";
 
-const Login = ({ setShowLogin }) => {
+const Login = () => {
+  const {setShowLogin, axios, setToken} = useGlobalContext()
   const [state, setState] = useState("login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -9,6 +11,7 @@ const Login = ({ setShowLogin }) => {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
   };
+  
   return (
     <div
       onClick={() => setShowLogin(false)}
@@ -25,8 +28,9 @@ const Login = ({ setShowLogin }) => {
         </p>
         {state === "register" && (
           <div className="w-full">
-            <p>Name</p>
+            <label htmlFor="name">Name</label>
             <input
+              id="name"
               onChange={(e) => setName(e.target.value)}
               value={name}
               placeholder="type here"
@@ -37,8 +41,9 @@ const Login = ({ setShowLogin }) => {
           </div>
         )}
         <div className="w-full ">
-          <p>Email</p>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             placeholder="type here"
@@ -48,8 +53,9 @@ const Login = ({ setShowLogin }) => {
           />
         </div>
         <div className="w-full ">
-          <p>Password</p>
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             placeholder="type here"
@@ -79,7 +85,7 @@ const Login = ({ setShowLogin }) => {
             </span>
           </p>
         )}
-        <button className="bg-primary hover:bg-blue-800 transition-all text-white w-full py-2 rounded-md cursor-pointer">
+        <button className="bg-primary-main hover:bg-blue-800 transition-all text-white w-full py-2 rounded-md cursor-pointer">
           {state === "register" ? "Create Account" : "Login"}
         </button>
       </form>

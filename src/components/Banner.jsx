@@ -13,7 +13,7 @@ const Banner = () => {
           We take care of insurance, driver verification and secure payments -
           so you can earn passive income, stress-free.
         </p>
-        <button className="px-6 py-2 bg-white hover:bg-slate-100 transition-all text-primary rounded-lg text-sm mt-4 cursor-pointer">
+        <button className="px-6 py-2 bg-white hover:bg-slate-100 transition-all text-primary-main rounded-lg text-sm mt-4 cursor-pointer">
           List your car
         </button>
       </div>
